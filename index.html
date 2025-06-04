@@ -194,9 +194,29 @@
   </section>
 
   <!-- Subscription Form -->
-  <section>
-    <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
+  <section class="subscription-section text-center mt-5 mb-5">
+    <!-- Centered heading for the form -->
+    <h2 class="text-center">Subscribe to our Newsletter</h2>
+    <!-- Simple, styled subscription form using Bootstrap classes -->
+    <form class="d-flex flex-column align-items-center mt-3">
+      <!-- Email input field -->
+      <input 
+        type="email" 
+        class="form-control mb-2" 
+        style="max-width: 320px;" 
+        placeholder="Enter your email" 
+        required
+      >
+      <!-- Subscribe button -->
+      <button type="submit" class="btn btn-primary btn-sm" style="width: 120px;">
+        Subscribe
+      </button>
+    </form>
   </section>
+
+  <!-- Simple footer at the bottom of the page -->
+  <footer class=" footer-banner" style="color: #222b3a; font-size: 0.8em;">
+    &copy; 2025 Intel Sustainability Project. All rights reserved.
+  </footer>
 </body>
 </html>

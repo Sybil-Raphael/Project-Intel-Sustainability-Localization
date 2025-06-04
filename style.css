@@ -362,31 +362,72 @@ body {
   color: #fff;
 }
 
-/* Responsive: stack columns on small screens */
-@media (max-width: 900px) {
-  .three-col-box {
-    width: 48%;
-    min-width: 150px;
-    max-width: 98vw;
-    height: auto;
-  }
-  .three-column-section .row {
-    gap: 14px;
-  }
+/* Style the subscription section to match the theme, but without a box */
+.subscription-section {
+  background: transparent;         /* No box background */
+  border: none;                    /* No border */
+  box-shadow: none;                /* No shadow */
+  max-width: 340px;                /* Keep content narrow and centered */
+  margin: 32px auto 0 auto;        /* Center on page with space above */
+  padding: 0;                      /* No extra padding */
+  text-align: center;              /* Center all content */
 }
 
-@media (max-width: 700px) {
-  .three-col-box {
-    width: 98vw;
-    min-width: 0;
-    max-width: 98vw;
-    margin-bottom: 16px;
-    height: auto;
-  }
-  .three-column-section .row {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
+/* Style the subscription heading */
+.subscription-section h2 {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.05em;
+  color: #0071c5;
+  font-weight: bold;
+  margin-bottom: 16px;
+  letter-spacing: 0.2px;
 }
+
+/* Place input and button side by side in the subscription section */
+.subscription-section form {
+  display: flex;                /* Use flexbox for horizontal layout */
+  flex-direction: row;          /* Place children in a row */
+  justify-content: center;      /* Center the form content */
+  align-items: center;          /* Align vertically */
+  gap: 8px;                     /* Space between input and button */
+}
+
+/* Make the input take up most of the space, button stays small */
+.subscription-section input[type="email"] {
+  flex: 1;                      /* Input grows to fill available space */
+  min-width: 0;                 /* Prevents overflow */
+  margin-bottom: 0;             /* Remove bottom margin for alignment */
+}
+
+/* Keep the button size as before */
+.subscription-section .btn {
+  white-space: nowrap;          /* Prevent button text from wrapping */
+  padding: 6px 18px;
+  margin-top: 0;                /* Remove top margin for alignment */
+}
+
+.subscription-section .btn:hover {
+  background-color: #0071c5;
+  color: #fff;
+}
+
+/* Banner style for the copyright/footer */
+.footer-banner {
+  background: #0071c5;           /* Intel blue */
+  color: #fff;                   /* White text */
+  text-align: center;
+  padding: 8px 0 10px 0;        /* Top and bottom padding */
+  font-size: 1em;
+  letter-spacing: 0.2px;
+  margin-top: 40px;
+  border-radius: 10 10 10px 10px;  /* Rounded bottom corners */
+}
+
+/* 
+  Beginner notes:
+  - The subscription section is now just centered text and form, no box or border.
+  - The footer remains a colored banner at the bottom.
+  - The form uses flexbox to put the input and button side by side.
+  - On small screens, they stack vertically for better readability.
+*/
 
