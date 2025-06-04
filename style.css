@@ -290,3 +290,103 @@ body > p {
 body {
   background: #eaf6fb; /* Light blue that matches Intel's theme */
 }
+
+/* Style for the three-column section */
+.three-column-section {
+  margin: 40px 0;
+}
+
+
+
+/* Style for each box in the three columns */
+.three-col-box {
+  /* Use the same size and spacing as the timeline cards */
+  min-width: 220px;
+  max-width: 340px;
+  width: 23%;              /* Same as .timeline-card */
+  padding: 16px;
+  background: #f5f7fa;     /* Same background as .timeline-card */
+  border: 1px solid #d1e0ee;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-left: auto;
+  margin-right: auto;
+  height: 270px;           /* Same as .timeline-card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Heading style matches timeline card titles */
+.three-col-box h2 {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif; /* Same as .timeline-card h3 */
+  font-size: 1.05em;                                     /* Same as .timeline-card h3 */
+  color: #0071c5;                                        /* Same as .timeline-card h3 */
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+}
+
+/* Paragraph style matches timeline card text */
+.three-col-box p {
+  font-family: Arial, Helvetica, sans-serif;              /* Same as .timeline-card p */
+  font-size: 0.8em;
+  color: #222b3a;                                        /* Same as .timeline-card h3 */
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+
+/* Button style for consistency */
+.three-col-box .btn {
+  margin-top: 12px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 1.0em;
+  border-radius: 10px;              /* Less rounded corners */
+  background: #fff;                /* White background */
+  color: #0071c5;                  /* Intel blue text */
+  border: 1px solid #0071c5;       /* Blue border */
+  padding: 4px 8px;               /* More padding for a larger button */
+  transition: background 0.2s, color 0.2s;
+  box-shadow: none;                /* No shadow */
+  text-align: center;
+}
+
+/* Button hover effect: blue background, white text */
+.three-col-box .btn:hover {
+  background-color: #0071c5;
+  color: #fff;
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 900px) {
+  .three-col-box {
+    width: 48%;
+    min-width: 150px;
+    max-width: 98vw;
+    height: auto;
+  }
+  .three-column-section .row {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .three-col-box {
+    width: 98vw;
+    min-width: 0;
+    max-width: 98vw;
+    margin-bottom: 16px;
+    height: auto;
+  }
+  .three-column-section .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+}
+
