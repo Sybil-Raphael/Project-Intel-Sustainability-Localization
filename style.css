@@ -276,6 +276,80 @@
   }
 }
 
+/* Make the FAQ accordion container responsive and centered */
+.container.col-md-4.mb-4 {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Responsive adjustments for FAQ accordion on small screens */
+@media (max-width: 600px) {
+  .container.col-md-4.mb-4 {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .accordion-button,
+  .accordion-body {
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+/* Responsive: Stack three columns vertically and adjust width */
+@media (max-width: 900px) {
+  .three-column-section .row {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .three-column-section .col-md-3 {
+    max-width: 98vw;
+    width: 98vw;
+  }
+  .three-col-box {
+    width: 98vw;
+    min-width: 0;
+    max-width: 98vw;
+    margin-bottom: 16px;
+    height: auto;
+  }
+  .three-col-box:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Responsive: Adjust subscription section for small screens */
+@media (max-width: 600px) {
+  .subscription-section {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .subscription-section form,
+  .subscription-form {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0;
+  }
+  .subscription-section input[type="email"] {
+    margin-bottom: 8px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .subscription-section .btn {
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+
+
+
 /* Center the instruction text at the bottom of the page */
 body > p {
   text-align: center;
@@ -411,23 +485,117 @@ body {
   color: #fff;
 }
 
+/* Responsive: Stack subscription form input and button vertically on small screens */
+@media (max-width: 600px) {
+  /* Target the subscription form */
+  .subscription-section form,
+  .subscription-form {
+    flex-direction: column !important; /* Stack vertically */
+    align-items: stretch !important;   /* Stretch to full width */
+    gap: 0;                            /* Remove gap between items */
+  }
+  .subscription-section input[type="email"] {
+    margin-bottom: 8px;                /* Add space below input */
+    width: 100%;                       /* Full width input */
+    max-width: 100%;
+  }
+  .subscription-section .btn {
+    width: 100%;                       /* Full width button */
+    padding: 8px 0;
+  }
+}
+
+/* Responsive: Stack three columns vertically on small screens */
+@media (max-width: 900px) {
+  .three-column-section .row {
+    flex-direction: column !important; /* Stack columns vertically */
+    align-items: center !important;
+  }
+  .three-column-section .col-md-3 {
+    max-width: 98vw;
+    width: 98vw;
+  }
+  .three-col-box {
+    width: 98vw;
+    min-width: 0;
+    max-width: 98vw;
+    margin-bottom: 16px;
+    height: auto; /* Let height grow naturally */
+  }
+  .three-col-box:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* Banner style for the copyright/footer */
 .footer-banner {
-  background: #0071c5;           /* Intel blue */
-  color: #fff;                   /* White text */
+  background: #003366;           /* Darker Intel blue for stronger contrast */
+  color: #eaf6fb;                /* Light blue text for better readability */
   text-align: center;
-  padding: 8px 0 10px 0;        /* Top and bottom padding */
+  padding: 6px 0 8px 0;         /* Thinner top and bottom padding */
   font-size: 1em;
   letter-spacing: 0.2px;
   margin-top: 40px;
   border-radius: 10 10 10px 10px;  /* Rounded bottom corners */
 }
 
-/* 
-  Beginner notes:
-  - The subscription section is now just centered text and form, no box or border.
-  - The footer remains a colored banner at the bottom.
-  - The form uses flexbox to put the input and button side by side.
-  - On small screens, they stack vertically for better readability.
-*/
+/* Footer links: match theme and improve accessibility */
+.footer-banner a {
+  color: #7fd1f7;                /* Lighter blue for links */
+  text-decoration: underline;
+  margin: 0 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.footer-banner a:focus,
+.footer-banner a:hover {
+  color: #fff;
+  background: #0071c5;
+  outline: 2px solid #fff;
+  border-radius: 2px;
+}
+
+.accordion-button {
+  background-color: #f5f7fa;
+  font-weight: normal;
+  color: #005b9f;
+}
+
+/* Hide the default Bootstrap arrow on the accordion button */
+.accordion-button::after {
+  display: none;
+}
+
+/* Add Bootstrap Icons caret-down as a background image for the toggle */
+/* This uses the SVG data URI for the caret-down icon from Bootstrap Icons */
+.accordion-button::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230071c5' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  margin-left: 8px;
+  margin-right: 8px;
+  transition: transform 0.3s;
+}
+
+/* Rotate the caret when the accordion is open */
+.accordion-button:not(.collapsed)::before {
+  transform: rotate(180deg);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f5f7fa;
+  color: #003a66;
+}
+
+.accordion-body {
+  background-color: #f5f7fa;
+  color: #222b3a;
+  font-size: 0.8em;
+  line-height: 1.6;
+}
 
